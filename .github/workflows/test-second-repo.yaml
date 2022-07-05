@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  test:
+  test-second-repo:
     runs-on: ubuntu-latest
     env:
       MY_ENV_FROM_YAML: "my-value"
@@ -35,7 +35,6 @@ jobs:
         run: |
           pwd
           ls -la .
-          git rev-parse HEAD
           pushd ./custom_path
           git rev-parse HEAD
           export GITHUB_SHA=$(git rev-parse HEAD)

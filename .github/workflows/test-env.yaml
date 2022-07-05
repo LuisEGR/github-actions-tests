@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  test:
+  test-env-secrets:
     runs-on: ubuntu-latest
     env:
       MY_ENV_FROM_YAML: "my-value"
