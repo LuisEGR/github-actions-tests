@@ -1,0 +1,13 @@
+This is the template where the values should be replaced.
+
+the value for key1 is `"$KEY1"`
+the value for key2 is `"$KEY2"``
+the value for key3 is `"$KEY3"``
+the value for key4 is `"$KEY4"``
+the value for key5 is `"$KEY5"``, <-- this comes from github secrets
+the value for key6 is `"$KEY6"``, <-- this comes from github action
+
+
+
+
+

@@ -1,0 +1,28 @@
+name: Test environment variables
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      MY_ENV_FROM_YAML: "my-value"
+      GHSECRET: ${{ secrets.SUPERSECRET }}
+    
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
+      - name: Display env
+        shell: bash
+        run: env
+
+      - name: Test
+        shell: bash
+        run: |
+          ./cli.sh
