@@ -1,0 +1,43 @@
+name: Test environment variables
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      MY_ENV_FROM_YAML: "my-value"
+    
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    
+    steps:
+      - uses: actions/checkout@v3.0.0
+        name: Checkout second repository
+        with:
+          repository: LuisEGR/github-actions-test-second
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          path: ./custom_path
+          ref: main
+
+      - name: Display second repo content
+        shell: bash
+        run: ls -la ./custom_path
+
+      - name: Get second repo last commit
+        shell: bash
+        run: |
+          pwd
+          git rev-parse HEAD
+          pushd ./custom_path
+          git rev-parse HEAD
+          export GITHUB_SHA=$(git rev-parse HEAD)
+          echo "Github sha: $GITHUB_SHA"
+          popd
+          echo "Github sha: $GITHUB_SHA"
