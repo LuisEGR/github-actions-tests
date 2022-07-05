@@ -34,6 +34,7 @@ jobs:
         shell: bash
         run: |
           pwd
+          ls -la .
           git rev-parse HEAD
           pushd ./custom_path
           git rev-parse HEAD
