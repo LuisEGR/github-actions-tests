@@ -44,12 +44,8 @@ jobs:
           echo "SECOND_GITHUB_SHA: $SECOND_GITHUB_SHA"
           popd
           echo "SECOND_GITHUB_SHA: $SECOND_GITHUB_SHA"
+          ./cli.sh
       
       - name: Display env
         shell: bash
         run: env
-
-      - name: Test
-        shell: bash
-        run: |
-          ./cli.sh
