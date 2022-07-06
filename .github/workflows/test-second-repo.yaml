@@ -1,4 +1,4 @@
-name: Test environment variables
+name: Test second repo
 on:
   push:
     branches:
@@ -18,6 +18,9 @@ jobs:
       id-token: 'write'
     
     steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
       - uses: actions/checkout@v3.0.0
         name: Checkout second repository
         with:
@@ -41,3 +44,12 @@ jobs:
           echo "Github sha: $GITHUB_SHA"
           popd
           echo "Github sha: $GITHUB_SHA"
+      
+      - name: Display env
+        shell: bash
+        run: env
+
+      - name: Test
+        shell: bash
+        run: |
+          ./cli.sh

@@ -6,8 +6,7 @@ the value for key3 is "$KEY3"
 the value for key4 is "$KEY4"
 the value for key5 is "$KEY5", <-- this comes from github secrets
 the value for key6 is "$KEY6", <-- this comes from github action
-
-
+the last commit of the second repo is: "$GITHUB_SHA"
 
 
 
