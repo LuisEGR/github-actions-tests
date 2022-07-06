@@ -40,10 +40,10 @@ jobs:
           ls -la .
           pushd ./custom_path
           git rev-parse HEAD
-          export GITHUB_SHA=$(git rev-parse HEAD)
-          echo "Github sha: $GITHUB_SHA"
+          export SECOND_GITHUB_SHA=$(git rev-parse HEAD)
+          echo "SECOND_GITHUB_SHA: $SECOND_GITHUB_SHA"
           popd
-          echo "Github sha: $GITHUB_SHA"
+          echo "SECOND_GITHUB_SHA: $SECOND_GITHUB_SHA"
       
       - name: Display env
         shell: bash
